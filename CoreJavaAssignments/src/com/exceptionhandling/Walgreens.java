@@ -6,7 +6,7 @@ public class Walgreens {
 		// TODO Auto-generated method stub
 		Walgreens store12 = new Walgreens();
 		try {
-			store12.validateCreditCard("1100567890123456");
+			store12.validateCreditCard("1110567890123456");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -18,13 +18,12 @@ public class Walgreens {
 	public void validateCreditCard(String creditCard) throws FinancialValidException
 	{
 		String sub=creditCard.substring(0, 4);
-
-		if((creditCard.length()==16)&&(sub!="1100"))
+     if(creditCard.length()==16&& !sub.contentEquals("1100"))
 		{
 		
 		System.out.println("Valid");
 		}
-		else if((creditCard.length()==15)&&(sub=="1100"))
+		else if((creditCard.length()==15)&& sub.contentEquals("1100"))
 		{
 			System.out.println("AMEX");
 		
